@@ -12,6 +12,19 @@ services:
       POSTGRES_USER: reserve_dev_app
       POSTGRES_PASSWORD: reserve_dev_app_password
       POSTGRES_DB: reserve_development
-
+  api:
+    build:
+      context: .
+      dockerfile: ./.docker/api/Dockerfile
+    command: /bin/sh -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - ./api:/api:cached
+    environment:
+      TZ: Asia/Tokyo
+      RAILS_ENV: development
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
 volumes:
   postgres-data:
