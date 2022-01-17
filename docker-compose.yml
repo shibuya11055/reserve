@@ -1,14 +1,17 @@
 version: "3"
 services:
   db:
-    build: .
+    build:
+      context: .docker/db
+      dockerfile: Dockerfile
     volumes:
       - postgres-data:/var/lib/postgresql/data:delegated
     ports:
-      - "5432:5432"
+      - 5432:5432
     environment:
       POSTGRES_USER: reserve_dev_app
       POSTGRES_PASSWORD: reserve_dev_app_password
+      POSTGRES_DB: reserve_development
 
 volumes:
   postgres-data:
