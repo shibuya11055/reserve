@@ -2,4 +2,4 @@
 . "$(dirname "$0")/_/husky.sh"
 
 echo "it is hooks!"
-echo \"Hello husky world :D\"
+cd frontend && yarn pre-commit

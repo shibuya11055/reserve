@@ -10,7 +10,8 @@
     "lint": "eslint --ext .tsx,.ts src/",
     "lint:fix": "eslint --ext .tsx,.ts src/ --fix",
     "format": "prettier --write \"**/*.+(js|json|yml|ts|tsx)\"",
-    "prepare": "cd .. && husky install frontend/.husky"
+    "prepare": "cd .. && husky install frontend/.husky",
+    "pre-commit": "lint-staged"
   },
   "husky": {
     "hooks": {
