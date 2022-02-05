@@ -13,11 +13,6 @@
     "prepare": "cd .. && husky install frontend/.husky",
     "pre-commit": "lint-staged"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.json": [
       "prettier --write"
