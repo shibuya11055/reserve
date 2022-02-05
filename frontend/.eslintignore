@@ -1,0 +1,2 @@
+**/*.generated.ts
+frontend/src/gen/types.ts

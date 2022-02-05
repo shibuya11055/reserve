@@ -1,11 +1,10 @@
-// import TestComponent from './test_graphql/testComponent'
+import { ApolloProvider } from '@apollo/client'
 import TestComponent from '@/test_graphql/testComponent'
 import client from '@/graphql/client'
-import { ApolloProvider } from '@apollo/client'
 
 function App() {
   return (
-    <ApolloProvider client={ client }>
+    <ApolloProvider client={client}>
       <TestComponent />
     </ApolloProvider>
   )
