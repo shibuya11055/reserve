@@ -20,14 +20,12 @@
   },
   "lint-staged": {
     "*.json": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ],
     "*.{js,jsx,ts,tsx}": [
       "prettier --write",
       "eslint --config .eslintrc.autofix --fix",
-      "eslint",
-      "git add"
+      "eslint"
     ]
   },
   "dependencies": {
