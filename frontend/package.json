@@ -9,7 +9,25 @@
     "generate": "graphql-codegen --config codegen.yml",
     "lint": "eslint --ext .tsx,.ts src/",
     "lint:fix": "eslint --ext .tsx,.ts src/ --fix",
-    "format": "prettier --write \"**/*.+(js|json|yml|ts|tsx)\""
+    "format": "prettier --write \"**/*.+(js|json|yml|ts|tsx)\"",
+    "prepare": "cd .. && husky install frontend/.husky && git config --local core.hooksPath .husky"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --config .eslintrc.autofix --fix",
+      "eslint",
+      "git add"
+    ]
   },
   "dependencies": {
     "@apollo/client": "^3.5.8",
@@ -37,6 +55,8 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.3",
     "prettier": "^2.5.1",
     "typescript": "^4.4.4",
     "vite": "^2.7.2"
