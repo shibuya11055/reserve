@@ -1,11 +1,11 @@
 import { ApolloProvider } from '@apollo/client'
-import TestComponent from '@/test_graphql/testComponent'
 import client from '@/graphql/client'
+import ReserveRoutes from '@/router'
 
 function App() {
   return (
     <ApolloProvider client={client}>
-      <TestComponent />
+      <ReserveRoutes />
     </ApolloProvider>
   )
 }
