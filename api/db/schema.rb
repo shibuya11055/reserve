@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_14_145419) do
+ActiveRecord::Schema.define(version: 2022_02_14_152455) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -24,6 +24,18 @@ ActiveRecord::Schema.define(version: 2022_02_14_145419) do
     t.text "close_at", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "menus", force: :cascade do |t|
+    t.uuid "uuid", default: -> { "gen_random_uuid()" }, null: false
+    t.text "name", null: false
+    t.float "required_time", null: false
+    t.integer "price"
+    t.text "note"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "company_id"
+    t.index ["company_id"], name: "index_menus_on_company_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -55,4 +67,5 @@ ActiveRecord::Schema.define(version: 2022_02_14_145419) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
+  add_foreign_key "menus", "companies"
 end
