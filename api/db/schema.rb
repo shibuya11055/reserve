@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_14_153355) do
+ActiveRecord::Schema.define(version: 2022_02_14_154111) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(version: 2022_02_14_153355) do
     t.text "close_at", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "menu_options", force: :cascade do |t|
+    t.bigint "menu_id", null: false
+    t.bigint "option_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["menu_id"], name: "index_menu_options_on_menu_id"
+    t.index ["option_id"], name: "index_menu_options_on_option_id"
   end
 
   create_table "menus", force: :cascade do |t|
