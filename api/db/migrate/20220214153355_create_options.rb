@@ -1,6 +1,6 @@
-class CreateMenus < ActiveRecord::Migration[6.1]
+class CreateOptions < ActiveRecord::Migration[6.1]
   def change
-    create_table :menus do |t|
+    create_table :options do |t|
       t.uuid :uuid, null: false, default: 'gen_random_uuid()'
       t.text :name, null: false
       t.float :required_time, null: false
