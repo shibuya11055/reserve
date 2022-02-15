@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(version: 2022_02_14_154111) do
   create_table "companies", force: :cascade do |t|
     t.uuid "uuid", default: -> { "gen_random_uuid()" }, null: false
     t.integer "staff_id", null: false
-    t.text "name", null: false
-    t.text "open_at", null: false
-    t.text "close_at", null: false
+    t.string "name", null: false
+    t.string "open_at", null: false
+    t.string "close_at", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2022_02_14_154111) do
 
   create_table "menus", force: :cascade do |t|
     t.uuid "uuid", default: -> { "gen_random_uuid()" }, null: false
-    t.text "name", null: false
+    t.string "name", null: false
     t.float "required_time", null: false
     t.integer "price", null: false
     t.text "note"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2022_02_14_154111) do
 
   create_table "options", force: :cascade do |t|
     t.uuid "uuid", default: -> { "gen_random_uuid()" }, null: false
-    t.text "name", null: false
+    t.string "name", null: false
     t.float "required_time", null: false
     t.integer "price", null: false
     t.text "note"
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 2022_02_14_154111) do
     t.integer "age", null: false
     t.integer "gender", default: 0
     t.integer "account_type", null: false
-    t.integer "phone_number"
+    t.string "phone_number"
     t.string "email", null: false
     t.json "tokens"
     t.datetime "created_at", precision: 6, null: false

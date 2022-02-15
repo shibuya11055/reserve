@@ -35,7 +35,7 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[6.1]
       t.integer :age, null: false
       t.integer :gender, default: 0
       t.integer :account_type, null: false
-      t.integer :phone_number
+      t.string :phone_number
       t.string :email, null: false
 
       ## Tokens
