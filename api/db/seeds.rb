@@ -24,7 +24,7 @@
       name: "カット#{i + 1}",
       required_time: 1.5,
       price: 4000 + i * 100,
-      note: "カットメニューバージョン#{i}です。",
+      note: "カットメニューバージョン#{i + 1}です。",
       company_id: company.id
     )
 
@@ -32,7 +32,7 @@
       name: "ヘッドスパ#{i + 1}",
       required_time: 1.0,
       price: 2000 + i * 100,
-      note: "ヘッドスパオプションバージョン#{i}です。",
+      note: "ヘッドスパオプションバージョン#{i + 1}です。",
       company_id: company.id
     )
 
