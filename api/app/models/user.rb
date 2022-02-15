@@ -4,4 +4,6 @@ class User < ApplicationRecord
           :recoverable, :rememberable, :validatable,
           :confirmable, :omniauthable
   include DeviseTokenAuth::Concerns::User
+
+  has_one :company, class_name: 'Company', foreign_key: 'staff_id'
 end
