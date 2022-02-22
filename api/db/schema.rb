@@ -76,7 +76,6 @@ ActiveRecord::Schema.define(version: 2022_02_14_154111) do
     t.string "last_name", null: false
     t.integer "age", null: false
     t.integer "gender", default: 0
-    t.integer "account_type", null: false
     t.string "phone_number"
     t.string "email", null: false
     t.json "tokens"

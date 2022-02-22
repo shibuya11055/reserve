@@ -4,7 +4,6 @@
     last_name: 'テスト',
     age: 20,
     gender: 0,
-    account_type: 0,
     phone_number: '12312341234',
     email: "test#{i + 1}@example.com",
     password: 'password1234!',

@@ -6,7 +6,6 @@ class Api::V1::Auth::RegistrationsController <  DeviseTokenAuth::RegistrationsCo
       :first_name,
       :last_name,
       :age,
-      :account_type,
       :email,
       :password,
       :password_confirmation,

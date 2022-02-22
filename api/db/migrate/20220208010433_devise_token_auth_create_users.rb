@@ -34,7 +34,6 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[6.1]
       t.string :last_name, null: false
       t.integer :age, null: false
       t.integer :gender, default: 0
-      t.integer :account_type, null: false
       t.string :phone_number
       t.string :email, null: false
 
