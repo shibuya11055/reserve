@@ -1,4 +1,4 @@
-class Api::V1::Auth::RegistrationsController <  DeviseTokenAuth::RegistrationsController
+class Api::V1::Auth::RegistrationOwnersController <  DeviseTokenAuth::RegistrationsController
   private
 
   def sign_up_params
@@ -9,6 +9,7 @@ class Api::V1::Auth::RegistrationsController <  DeviseTokenAuth::RegistrationsCo
       :email,
       :address,
       :phone_number,
+      :gender,
       :password,
       :password_confirmation,
     )

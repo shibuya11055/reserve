@@ -9,5 +9,8 @@ Rails.application.routes.draw do
   mount_devise_token_auth_for 'User', at: 'api/v1/auth', controllers: {
     registrations: 'api/v1/auth/registrations'
   }
+  mount_devise_token_auth_for 'Owner', at: 'api/v1/auth/owners', controllers: {
+    registrations: 'api/v1/auth/registration_owners'
+  }
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
