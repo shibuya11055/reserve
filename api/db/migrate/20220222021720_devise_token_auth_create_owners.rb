@@ -1,7 +1,7 @@
-class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[6.1]
+class DeviseTokenAuthCreateOwners < ActiveRecord::Migration[6.1]
   def change
 
-    create_table(:users) do |t|
+    create_table(:owners) do |t|
       ## Required
       t.string :provider, :null => false, :default => "email"
       t.string :uid, :null => false, :default => ""
@@ -32,12 +32,11 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[6.1]
       t.uuid :uuid, null: false, default: 'gen_random_uuid()'
       t.string :first_name, null: false
       t.string :last_name, null: false
-      t.integer :age, null: false
-      t.integer :gender, default: 0
+      t.string :age, null: false
       t.string :address, null: false
-      t.string :phone_number, null: false
-      t.string :email, null: false
-      t.datetime :birthday, null: false
+      t.string :phone_number
+      t.integer :gender,  default: 0
+      t.string :email
 
       ## Tokens
       t.json :tokens
@@ -45,10 +44,10 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[6.1]
       t.timestamps
     end
 
-    add_index :users, :email,                unique: true
-    add_index :users, [:uid, :provider],     unique: true
-    add_index :users, :reset_password_token, unique: true
-    add_index :users, :confirmation_token,   unique: true
-    # add_index :users, :unlock_token,         unique: true
+    add_index :owners, :email,                unique: true
+    add_index :owners, [:uid, :provider],     unique: true
+    add_index :owners, :reset_password_token, unique: true
+    add_index :owners, :confirmation_token,   unique: true
+    # add_index :owners, :unlock_token,         unique: true
   end
 end

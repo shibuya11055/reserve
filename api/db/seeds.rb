@@ -1,20 +1,33 @@
 3.times do |i|
-  user = User.new(
-    first_name: "太郎#{i + 1}",
+  count = i + 1
+  User.create!(
+    first_name: "太郎#{count}",
     last_name: 'テスト',
     age: 20,
     gender: 0,
-    account_type: 0,
-    phone_number: '12312341234',
-    email: "test#{i + 1}@example.com",
+    address: '宮城県仙台市青葉区',
+    birthday: Time.now - count.month,
+    phone_number: "1231234123#{count}",
+    email: "test#{count}@example.com",
     password: 'password1234!',
     confirmed_at: Time.now
   )
-  user.save!
+
+  owner = Owner.create!(
+    first_name: "オーナー#{count}",
+    last_name: '太郎',
+    age: 20,
+    gender: 0,
+    phone_number: "22312341234#{count}",
+    address: '宮城県仙台市青葉区',
+    email: "test#{count}@example.com",
+    password: 'password1234!',
+    confirmed_at: Time.now
+  )
 
   company = Company.create!(
-    staff_id: 1,
-    name: "美容室#{i + 1}",
+    owner_id: owner.id,
+    name: "美容室#{count}",
     open_at: '10:00',
     close_at: '20:00'
   )
