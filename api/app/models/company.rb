@@ -1,5 +1,5 @@
 class Company < ApplicationRecord
-  belongs_to :staff, class_name: 'User'
+  belongs_to :owner
   has_many :menus
   has_many :options
 end
