@@ -2,7 +2,7 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import Home from '@/features/test_components/Home'
 import Users from '@/features/test_components/Users'
 import Articles from '@/features/test_components/Articles'
-import OwnersLogin from '@/features/login/owners_login'
+import OwnersLogin from '@/features/owners/login/owners_login'
 
 export default function ReserveRoutes() {
   return (
