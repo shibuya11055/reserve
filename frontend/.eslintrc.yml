@@ -31,6 +31,7 @@ rules:
       tsx: never
       js: never
       jsx: never
+  import/prefer-default-export: off
 settings:
   import/resolver:
     typescript: {}
