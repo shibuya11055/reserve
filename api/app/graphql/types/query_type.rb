@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Types
   class QueryType < Types::BaseObject
     # Add `node(id: ID!) and `nodes(ids: [ID!]!)`
@@ -12,6 +14,11 @@ module Types
       description: "An example field added by the generator"
     def test_field
       "Hello World!"
+    end
+
+    field :owner, Types::OwnerType, null: false
+    def owner
+      Owner.first
     end
   end
 end
