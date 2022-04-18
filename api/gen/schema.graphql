@@ -1,3 +1,8 @@
+"""
+An ISO 8601-encoded datetime
+"""
+scalar ISO8601DateTime
+
 type Mutation {
   """
   An example field added by the generator
@@ -5,7 +10,22 @@ type Mutation {
   testField: String!
 }
 
+type Owner {
+  address: String!
+  age: String!
+  createdAt: ISO8601DateTime!
+  email: String
+  firstName: String!
+  gender: Int
+  lastName: String!
+  phoneNumber: String
+  updatedAt: ISO8601DateTime!
+  uuid: String!
+}
+
 type Query {
+  currentOwner: Owner!
+
   """
   An example field added by the generator
   """

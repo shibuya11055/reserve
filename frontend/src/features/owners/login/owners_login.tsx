@@ -14,6 +14,7 @@ import Container from '@mui/material/Container'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import reserveAxios from '@/lib/reserveAxios'
 import { useNavigate } from 'react-router-dom'
+import { setAuthDataFromResponse } from '@/submodules/auth'
 
 const theme = createTheme()
 
@@ -32,6 +33,7 @@ export default function OwnersLogin() {
     console.log(res)
 
     if (res.status === 200) {
+      setAuthDataFromResponse(res.headers)
       navigate('/owners/home')
     }
   }

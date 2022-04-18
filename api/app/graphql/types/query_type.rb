@@ -16,9 +16,9 @@ module Types
       "Hello World!"
     end
 
-    field :owner, Types::OwnerType, null: false
-    def owner
-      Owner.first
+    field :current_owner, Types::OwnerType, null: false
+    def current_owner
+      context[:current_owner]
     end
   end
 end
