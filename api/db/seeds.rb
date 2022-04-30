@@ -8,7 +8,7 @@
     address: '宮城県仙台市青葉区',
     birthday: Time.now - count.month,
     phone_number: "1231234123#{count}",
-    email: "test#{count}@example.com",
+    email: "user#{count}@example.com",
     password: 'password1234!',
     confirmed_at: Time.now
   )
@@ -20,7 +20,7 @@
     gender: 0,
     phone_number: "22312341234#{count}",
     address: '宮城県仙台市青葉区',
-    email: "test#{count}@example.com",
+    email: "owner#{count}@example.com",
     password: 'password1234!',
     confirmed_at: Time.now
   )
